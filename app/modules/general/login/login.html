@@ -1,0 +1,35 @@
+<div class="container">	
+	<md-content layout-padding>
+		<div layout="row" layout-align="center center">
+			<form  name="ctrl.form" ng-submit="ctrl.login()">
+
+				<md-input-container class="md-block">
+				<label>Email</label>
+				<input type="text" name="text" ng-model="ctrl.user.email" ng-pattern="ctrl.patternEmail" required>
+				<span class="error" ng-show="ctrl.form.login.$error.pattern">Login is not valid</span>
+				<md-tooltip md-direction="bottom">
+	                Login should be at least 3 characters.
+	            </md-tooltip>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+				<label>Password</label>
+				<input type="password" name="password" ng-model="ctrl.user.password"  validate-pass required/>
+				<span class="error" ng-show="ctrl.form.password.$error.validatePass">Password is not valid</span>
+				<md-tooltip md-direction="bottom">`
+	                Password should be at least 6 characters long
+	            and should contain one number, one capital letter
+	            </md-tooltip>
+	            </md-input-container>
+
+	             <div class="loginError" ng-if="ctrl.loginError">Credentials are not valid</div>
+	             <div layout="row" layout-align="center center">
+
+				<md-button class="md-primary" type="submit"> login </md-button>
+				</div>
+				
+		  </form>
+		  </div>
+	</md-content>
+
+</div>

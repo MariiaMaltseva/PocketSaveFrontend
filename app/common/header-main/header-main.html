@@ -1,0 +1,17 @@
+<div class="container"> 
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+
+              <li>
+                <a  class="header" href ui-sref="login"><p>POCKET SAVE</p></a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li ui-sref-active="active" ng-repeat="route in ctrl.states">
+                <a  class="header" href ui-sref="{{route.name}}">{{route.title}}</a>
+            </ul>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,13 @@
+<html>
+
+<body>
+<h1>Spring MVC multi files upload example</h1>
+
+<form ng-submit="ctrl.uploadFiles(ctrl.file)" enctype="multipart/form-data">
+    <input type="file" name="files" ng-model="ctrl.file1" /><br/>
+    <input type="file" name="files" ng-model="ctrl.file2"/><br/>
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>

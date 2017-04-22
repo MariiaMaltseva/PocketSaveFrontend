@@ -1,0 +1,58 @@
+
+<div class="container">
+<div>
+		<div>
+	<picture ng-click="ctrl.openModalIncome()">
+    <source srcset="app/common/images/fon7.jpg" media="(max-width: 100px)">
+    <img srcset="app/common/images/fon7.jpg" alt="My default image">
+</picture>
+</div>
+<div class="item meta">
+<h1 class="item-meta-title">
+Добавить <br>доход
+</h1>
+</div>
+</div>
+
+		<!-- <md-content class="balance">
+			<span class="labelBalance"><b>Текущий баланс:</b></span>
+			<span class="valueBalance">{{ctrl.currentUser.balance}} UAH</span>
+		</md-content>
+
+
+	  	<div layout="row" class="work-form__row" layout-align="center" layout-wrap>
+
+	    	<div layout="row" layout-align="center center">
+	            <md-button class="action" ng-click="ctrl.openModalIncome()">
+	        		Добавить к балансу
+	      		</md-button>
+	    	</div>
+		    <div layout="row" layout-align="center center">
+		    	<md-button class="action" ng-click="ctrl.openModalOutcome()" >
+		        	Списать с баланса
+		    	</md-button>
+		    </div>
+	      
+	    </div>
+
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered text-left">
+				<thead>
+					<thead>
+					<th>Дата</th>
+					<th>Сумма (грн)</th>
+					<th>Описание</th>
+					<th>Категория</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="history in ctrl.currentUser.balanceHistories" ng-class="{tableRow: history.amount < 0}">
+						<td>{{history.date | date:'MM.dd.yyyy'}}</td>	
+						<td>{{history.amount}}</td>
+						<td>{{history.description}}</td>
+						<td>{{history.categories.categoryName}}</td>
+		
+					</tr>
+				</tbody>
+			</table>
+		</div> -->
+</div>	
