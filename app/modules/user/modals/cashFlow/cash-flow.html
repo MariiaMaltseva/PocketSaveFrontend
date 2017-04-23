@@ -2,7 +2,7 @@
   <form ng-cloak ng-submit="ctrl.save()">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Добавить расход</h2>
+        <h2>{{ctrl.title}}</h2>
         <span flex></span>
       </div>
     </md-toolbar>
@@ -13,7 +13,9 @@
       <md-input-container class="md-block" flex="50">
         <label>Категории</label>
         <md-select name="category" ng-model="ctrl.selectedCategory" required>
-          <md-option ng-repeat="category in ctrl.user.categories">{{category.categoryName}}</md-option>
+          <md-option ng-repeat="category in ctrl.user.categories" ng-if="category.categoryType === ctrl.typeCategory">
+            {{category.categoryName}}
+          </md-option>
         </md-select>
       </md-input-container>
 
@@ -22,7 +24,7 @@
           <input required type="text" name="description" ng-model="ctrl.history.description" />
       </md-input-container>
 
-			<md-input-container class="md-block" flex="50">
+			<md-input-container class="md-block">
 				<label>Сумма</label>
 				<input required type="text" name="sum" ng-model="ctrl.history.amount"/>
 			</md-input-container>
@@ -37,10 +39,10 @@
     <md-dialog-actions layout="row">  
       <span flex></span>
       <md-button ng-click="ctrl.cancel()">
-       Cancel
+        Отмена
       </md-button>
       <md-button type="submit" class="md-primary">
-        Save
+        Сохранить
       </md-button>
     </md-dialog-actions>
   </form>

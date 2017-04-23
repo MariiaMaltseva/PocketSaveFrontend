@@ -10,12 +10,33 @@
 
 .modal-outcome > form{
 	width: 700px;
-	height: 43 0px;
+	height: 450px;
+}
+
+md-dialog-content .md-dialog-outcome{
+    height: 300px;
+    margin-left: 50px;
+}
+
+.modal-category > form{
+    width: 700px;
+    height: 405px;
+}
+
+md-dialog-content .md-dialog-category{
+    height: 250px;
+    margin-left: 50px;
+    font-size: 15px;
+    margin-top: 50px;
+}
+
+md-input-container {
+    margin-top: 30px;
 }
 
 .md-toolbar-tools{
-	background-color: #62ff00;
-    color: black;
+	background-color: rgb(137, 150, 156);
+    color: #62ff00;
 }
 
 p{
@@ -63,23 +84,24 @@ body {
 }
 
 .action {
-	color: black;
-    background-color: #62ff00;
+	color: #62ff00;
+    background-color: rgb(137, 150, 156);
     margin-right: 40px;
     margin-left: 40px;
-    width: 200px;
+    width: 400px;
+    height: 200px;
     margin-top: 50px;
     margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-md-dialog-content .md-dialog-outcome{
-	height: 300px;
-	margin-left: 50px;
-}
-
-md-dialog-content .md-dialog-outcome .md-block{
-    font-size: 15px;
-    margin-top: 30px;
+h4 {
+    font-size: 15;
+    text-align: center;
+    padding-bottom: 25px;
+    font-weight: 600;
+    font-style: italic;
 }
 
 .md-datepicker-input {
@@ -122,4 +144,18 @@ tbody tr.tableRow{
 img {
     border-radius: 5px;
     width: 500px;
+}
+
+@media (max-width: 691px) {
+    .picture {
+        height: 300px;
+        width: 450px;
+    }
+}
+
+@media (max-width: 892px) {
+    .picture {
+        height: 400px;
+        width: 600px;
+    }
 }

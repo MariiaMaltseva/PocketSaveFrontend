@@ -1,20 +1,8 @@
 
 <div class="container">
-<div>
-		<div>
-	<picture ng-click="ctrl.openModalIncome()">
-    <source srcset="app/common/images/fon7.jpg" media="(max-width: 100px)">
-    <img srcset="app/common/images/fon7.jpg" alt="My default image">
-</picture>
-</div>
-<div class="item meta">
-<h1 class="item-meta-title">
-Добавить <br>доход
-</h1>
-</div>
-</div>
+	<md-content layout-padding>
 
-		<!-- <md-content class="balance">
+		<md-content class="balance">
 			<span class="labelBalance"><b>Текущий баланс:</b></span>
 			<span class="valueBalance">{{ctrl.currentUser.balance}} UAH</span>
 		</md-content>
@@ -23,13 +11,28 @@
 	  	<div layout="row" class="work-form__row" layout-align="center" layout-wrap>
 
 	    	<div layout="row" layout-align="center center">
-	            <md-button class="action" ng-click="ctrl.openModalIncome()">
+	            <md-button class="action" ng-click="ctrl.openCashFlowModal('income')">
 	        		Добавить к балансу
 	      		</md-button>
 	    	</div>
 		    <div layout="row" layout-align="center center">
-		    	<md-button class="action" ng-click="ctrl.openModalOutcome()" >
+		    	<md-button class="action" ng-click="ctrl.openCashFlowModal('outcome')" >
 		        	Списать с баланса
+		    	</md-button>
+		    </div>
+	      
+	    </div>
+
+	    <div layout="row" class="work-form__row" layout-align="center" layout-wrap>
+
+	    	<div layout="row" layout-align="center center">
+	            <md-button class="action" ng-click="ctrl.openModalCategory('income')">
+	        		Категория дохода
+	      		</md-button>
+	    	</div>
+		    <div layout="row" layout-align="center center">
+		    	<md-button class="action" ng-click="ctrl.openModalCategory('outcome')" >
+		        	Категория расхода
 		    	</md-button>
 		    </div>
 	      
@@ -54,5 +57,38 @@
 					</tr>
 				</tbody>
 			</table>
-		</div> -->
+		</div>
 </div>	
+
+
+
+<!-- <div  class="picture" style="background-image: url(app/common/images/fon7.jpg)"> -->
+<!-- 
+		<div>
+		<picture ng-click="openModalIncome()">
+		<source srcset="app/common/images/bird.jpg" media="(max-width: 300px) and (orientation: landscape)">
+    <source srcset="app/common/images/fon6.jpg" media="(max-width: 480px) and (orientation: portrait)">
+    <source srcset="app/common/images/fon6.jpg" media="(max-width: 800px) and (orientation: landscape)">
+    <source srcset="app/common/images/fon5.jpg" media="(max-width: 1000зч) and (orientation: portrait)">
+    <img srcset="app/common/images/fon7.jpg" alt="My default image">
+    </picture> -->
+
+<!-- <div  class="picture" style="background-image: url(app/common/images/fon7.jpg); background-size: cover; background-repeat: no-repeat;">
+
+<div class="item meta">
+<h1 class="item-meta-title">
+Добавить <br>доход
+</h1>
+</div> -->
+
+<!-- 	<picture ng-click="ctrl.oapp/common/images/bird.jpgpenModalIncome()">
+    <source srcset="app/common/images/bird.jpg" media="(max-width: 100px)">
+    <img srcset="app/common/images/fon7.jpg" alt="My default image">
+</picture> -->
+<!-- </div>
+<div class="item meta">
+<h1 class="item-meta-title">
+Добавить <br>доход
+</h1>
+</div>
+</div> -->

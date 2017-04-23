@@ -13,12 +13,10 @@ export default class StartCtrl{
 		this.currentUser = authStorageService.getToken();
 
 		this.checkIsNewUser();
-			// this.balance = this.checkBalance();
-			// this.currentBalance = this.caculateCurrentBalance();
 	}
 
 	checkIsNewUser() {
-		let isNewUser = this.authService.getIsNewUserFlag();
+			let isNewUser = this.authService.getIsNewUserFlag();
 		if(isNewUser !== null && isNewUser){
 			this.openModalWindow();
 		}
@@ -39,12 +37,12 @@ export default class StartCtrl{
 		return this.balance.currentBalance - sum;
 	}
 
-	openModalOutcome() {
-		this.service.showModalOutcome();
+	openModalCategory(typeCategory) {
+		this.service.showModalCategory(typeCategory);
 	}
 
-	openModalIncome() {
-		this.service.showModalIncome();
+	openCashFlowModal(typeCategory) {
+		this.service.showModalCashFlow(typeCategory);
 	}
 
  	openModalWindow() {

@@ -1,10 +1,10 @@
 'use strict';
 
-import outcomeModalTemplate from 'modules/user/modals/outcome/modal.html';
-import outcomeModalController from 'modules/user/modals/outcome/modalCtrl.js';
+import cashFlowModalTemplate from 'modules/user/modals/cashFlow/cash-flow.html';
+import cashFlowModalController from 'modules/user/modals/cashFlow/cash-flow-ctrl.js';
 
-import incomeModalTemplate from 'modules/user/modals/income/modal.html';
-import incomeModalController from 'modules/user/modals/income/modalCtrl.js';
+import categoryModalTemplate from 'modules/user/modals/category/category-modal.html';
+import categoryModalController from 'modules/user/modals/category/category-modal-ctrl.js';
 
 export default class DataService{
 	constructor($http, $uibModal, $mdDialog, apiConfig){
@@ -32,42 +32,41 @@ export default class DataService{
 		return this.http.post(this.apiConfig.backHost + 'update', user);
 	}
 
-	saveBalanceHistory(user, history, category){
-		history.amount = -history.amount;
-		user.history = history;
-		user.category = category;
+	saveBalanceHistory(user){
 		return this.http.post(this.apiConfig.backHost + 'history/save', user);
 	}
 
-	saveBalanceHistoryIncome(user, history){
-		user.history = history;
-		user.category = '';
-		return this.http.post(this.apiConfig.backHost + 'history/save', user);
+	addCategory(user){
+		return this.http.post(this.apiConfig.backHost + 'category/add', user);
+	}
+
+	deleteCategory(user){
+		return this.http.post(this.apiConfig.backHost + 'category/delete', user);
 	}
 
 	getCurrencies(){
 		return this.http.get(this.apiConfig.currency);
 	}
 
-	showModalOutcome(){
+	showModalCashFlow(typeCategory){
     let modalInstance = this.mdDialog.show({
-         template: outcomeModalTemplate,
-         controller: outcomeModalController,
+         template: cashFlowModalTemplate,
+         controller: cashFlowModalController,
          controllerAs: 'ctrl',
           locals: {
-           user: this.currentUser
+           typeCategory: typeCategory
          },
       });
     return modalInstance;
    }
 
-   showModalIncome(){
+   showModalCategory(typeCategory){
     let modalInstance = this.mdDialog.show({
-         template: incomeModalTemplate,
-         controller: incomeModalController,
+         template: categoryModalTemplate,
+         controller: categoryModalController,
          controllerAs: 'ctrl',
           locals: {
-           user: this.currentUser
+           typeCategory: typeCategory
          },
       });
     return modalInstance;

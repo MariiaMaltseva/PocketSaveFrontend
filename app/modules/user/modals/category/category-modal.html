@@ -1,0 +1,43 @@
+<md-dialog class="modal-category">
+  <form ng-cloak ng-submit="ctrl.save()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Редактировать категории</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+    <div class="md-dialog-category">  
+    <h4>Выбери существующую категорию из списка, чтобы удалить,<br> или добавь новую</h4>
+
+      <md-input-container class="md-block" flex="50">
+        <label>Категории</label>
+        <md-select name="category" ng-model="ctrl.selectedCategory" required>
+          <md-option ng-repeat="category in ctrl.user.categories" ng-if="category.categoryType === ctrl.typeCategory">
+            {{category.categoryName}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+          <label>Kатегория</label>
+          <input required type="text" name="newCategory" ng-model="ctrl.selectedCategory" />
+      </md-input-container>
+
+		</div>
+	</md-dialog-content>
+
+    <md-dialog-actions layout="row">  
+      <md-button ng-click="ctrl.cancel()">
+        Отмена
+      </md-button>
+      <md-button type="submit" class="md-primary">
+        Сохранить
+      </md-button>
+       <md-button ng-click="ctrl.delete()" ng-if="ctrl.selectedCategory" active>
+        Удалить
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>	
