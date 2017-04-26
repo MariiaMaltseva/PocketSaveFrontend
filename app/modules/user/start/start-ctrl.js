@@ -77,20 +77,16 @@ export default class StartCtrl{
       });
 
 
-      function ModalController($mdDialog, user, dataService, authStorageService, $state) {
-      	this.user = user;
+      function ModalController($mdDialog, user, dataService, authStorageService) {
       	this.userName = user.firstName + ' ' + user.lastName;
       	this.currentBalance = 0;
-      	this.service = dataService;
-      	this.authService = authStorageService;
-      	this.state = $state;
 
         this.save = function() {
-          this.service.update(this.user, this.currentBalance).then((response)=>{
+          dataService.update(user, this.currentBalance).then((response)=>{
 			this.updatedUser = response.data;
 			if(this.updatedUser !== null){
-				this.authService.setToken(this.updatedUser);
-				this.authService.removeIsNewUserFlag();
+				authStorageService.setToken(this.updatedUser);
+				authStorageService.removeIsNewUserFlag();
 				window.location.reload(true);
 				$mdDialog.hide();
 			}
@@ -102,5 +98,4 @@ export default class StartCtrl{
 	    };
       }
     }
-
 }

@@ -10,15 +10,17 @@ export default class LoginCtrl{
 		this.user = {};
 		this.userToLogin = {};
 		this.loginError = false;
+		this.patternEmail = /^[-$+()*^%#!~'._a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+		this.patternPassword = /(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z]).{6,}/;
 	}
 
 	login(){
 		this.service.login(this.user).then((response)=>{
 			this.userToLogin = response.data;
-			if(this.userToLogin !== ''){
+			if(this.form.$valid && this.userToLogin !== ''){
 				this.authService.setToken(this.userToLogin);
 				this.state.go('start');
-			}else{
+			}else if(this.userToLogin === ''){
 				this.loginError = true;
 			}
 		});
