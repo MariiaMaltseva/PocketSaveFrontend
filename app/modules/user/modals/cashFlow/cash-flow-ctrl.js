@@ -20,9 +20,7 @@ export default class CashFlowModalController{
 	}
 
 	getTitle(){	
-		return (this.typeCategory === 'outcome') 
-				? 'Добавить расход'
-				: 'Добавить доход';
+		return (this.typeCategory === 'outcome') ? 'Добавить расход' : 'Добавить доход';
 	}
 
 	cancel() {
@@ -30,9 +28,7 @@ export default class CashFlowModalController{
 	}
 
 	save() {
-		this.history.amount = (this.typeCategory === 'outcome') 
-							? -this.history.amount 
-							: this.history.amount;
+		this.history.amount = (this.typeCategory === 'outcome') ? -this.history.amount : this.history.amount;
 		this.category.categoryName = this.selectedCategory;
 		this.user.history = this.history;
 		this.user.category = this.category;

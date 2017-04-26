@@ -15,7 +15,6 @@ export default class PieModalController{
 	}
 
 	getDataPie(categoryType){
-		let amount = this.user.initialBalance;
 		return this.user.categories
 			.filter((item) => {
 				return (item.categoryType === categoryType);
@@ -42,7 +41,6 @@ export default class PieModalController{
 	}
 
 	apply(){
-		console.log("selectedCategory: " + this.selectedCategory);
 		this.pieData = this.getDataPie(this.selectedCategory);
 	}
 

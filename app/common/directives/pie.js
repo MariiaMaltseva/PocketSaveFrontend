@@ -21,7 +21,7 @@ let draw = (scopeData, container) =>{
 	scopeData.map((item) => {
 		names.push(item.name);
 		amounts.push(item.amount);
-	})
+	});
 		
 	let data = {
 	    labels: names,
@@ -32,7 +32,7 @@ let draw = (scopeData, container) =>{
 	        }]
 	};
 
-	let myPieChart = new Chart(container, {
+	new Chart(container, {
 	    type: 'pie',
 	    data: data,
 	    options: {
@@ -48,13 +48,7 @@ export default () => {
 	 return function($scope, element, attrs) {
 	 	let container = element[0];
         $scope.$watch(attrs.pie,function(value){
-           value.map((item) => {
-			console.log("category: " + item.name);
-		});
-		value.map((item) => {
-			console.log("category amount: " + item.amount);
-		});
            draw(value, container);
         });
-    }
+    };
 };

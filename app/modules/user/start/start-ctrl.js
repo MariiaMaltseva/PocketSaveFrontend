@@ -9,7 +9,9 @@ export default class StartCtrl{
 	 $mdDialog, 
 	 $scope, 
 	 pieChartService,
-	 graphService){
+	 graphService,
+	 categoryService,
+	 cashFlowService){
 		'ngInject';
 
 		this.mdDialog = $mdDialog;
@@ -18,6 +20,8 @@ export default class StartCtrl{
 		this.service = dataService;
 		this.pieService = pieChartService;
 		this.graphService = graphService;
+		this.categoryService = categoryService;
+		this.cashFlowService = cashFlowService;
 		this.currentUser = authStorageService.getToken();
 
 		this.checkIsNewUser();
@@ -45,16 +49,12 @@ export default class StartCtrl{
 		return this.balance.currentBalance - sum;
 	}
 
-	openModal(typeCategory, nameModal) {
-		this.service.showModal(typeCategory, nameModal);
-	}
-
 	openModalCategory(typeCategory) {
-		this.service.showModalCategory(typeCategory);
+		this.categoryService.showModal(typeCategory);
 	}
 
 	openCashFlowModal(typeCategory) {
-		this.service.showModalCashFlow(typeCategory);
+		this.cashFlowService.showModal(typeCategory);
 	}
 
 	openModalGraph() {
@@ -100,7 +100,6 @@ export default class StartCtrl{
         this.cancel = function() {
 	      	$mdDialog.cancel();
 	    };
-
       }
     }
 

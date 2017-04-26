@@ -29,9 +29,5 @@ export default function ($window) {
         $window.localStorage.removeItem('isNewUser');
     };
 
-     service.checkIfLoggedIn = function () {
-        return service.getToken();
-    };
-
     return service;
 }

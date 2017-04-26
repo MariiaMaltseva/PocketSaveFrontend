@@ -14,7 +14,6 @@ let draw = (scopeData, container) =>{
 	};
 
 	let data = initData(scopeData);
-
 	let dataset = new vis.DataSet(data);
 
 	let options = {
@@ -36,10 +35,6 @@ export default () => {
 			let container = elem[0];
 
 			scope.$watchCollection('data', function(value){
-				console.log("Graph scope.data: " + scope.data.map((item, index) => {
-			console.log("y: " + item.amount);
-			console.log("x: " + new Date(item.date));
-		}));
 				container.innerHTML = '';
 				draw(scope.data, container);
 			});

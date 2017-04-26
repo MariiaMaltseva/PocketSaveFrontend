@@ -11,12 +11,4 @@ export default class HeaderMainCtrl{
 		});
 		this.$state = $state;
 	}
-
-	goToRegister(){
-		this.$state.go('register');
-	}
-
-	goToLoginPage(){
-		this.$state.go('login');
-	}
 }

@@ -1,14 +1,5 @@
 'use strict';
 
-import cashFlowModalTemplate from 'modules/user/modals/cashFlow/cash-flow.html';
-import cashFlowModalController from 'modules/user/modals/cashFlow/cash-flow-ctrl.js';
-
-import categoryModalTemplate from 'modules/user/modals/category/category-modal.html';
-import categoryModalController from 'modules/user/modals/category/category-modal-ctrl.js';
-
-import tableCashFlowModalTemplate from 'modules/user/modals/table/table-cash-flow.html';
-import tableCashFlowModalController from 'modules/user/modals/table/table-cash-flow-ctrl.js';
-
 export default class DataService{
 	constructor($http, $uibModal, $mdDialog, apiConfig){
 		'ngInject';
@@ -16,7 +7,6 @@ export default class DataService{
 		this.currentUser = {};
 
 		this.http = $http;
-
 		this.$uibModal = $uibModal;
 		this.mdDialog = $mdDialog;
 		this.apiConfig = apiConfig;
@@ -50,40 +40,4 @@ export default class DataService{
 	getCurrencies(){
 		return this.http.get(this.apiConfig.currency);
 	}
-
-	showModalCashFlow(typeCategory){
-    let modalInstance = this.mdDialog.show({
-         template: cashFlowModalTemplate,
-         controller: cashFlowModalController,
-         controllerAs: 'ctrl',
-          locals: {
-           typeCategory: typeCategory
-         },
-      });
-    return modalInstance;
-   }
-
-   showModalCategory(typeCategory){
-    let modalInstance = this.mdDialog.show({
-         template: categoryModalTemplate,
-         controller: categoryModalController,
-         controllerAs: 'ctrl',
-          locals: {
-           typeCategory: typeCategory
-         },
-      });
-    return modalInstance;
-   }
-
-   showModal(typeCategory, nameModal){
-    let modalInstance = this.mdDialog.show({
-         template: tableCashFlowModalTemplate,
-         controller: tableCashFlowModalController,
-         controllerAs: 'ctrl',
-          locals: {
-           typeCategory: typeCategory
-         },
-      });
-    return modalInstance;
-   }
 }

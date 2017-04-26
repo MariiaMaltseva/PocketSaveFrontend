@@ -22,10 +22,9 @@ export default ($stateProvider, $locationProvider, $urlRouterProvider)=>{
 			url: '/start',
 			resolve: {
 		  		access: (authStorageService) => {
-		  			'ngInject'
 			  		if(!authStorageService.getToken()){
 			  			event.preventDefault();
-			  			otherwise();
+			  			this.otherwise();
 			  		}
 		  		}
 		  	},	  

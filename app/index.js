@@ -11,6 +11,8 @@ import userRouterConfig from 'modules/user/router.js';
 
 import pieChartModule from './modules/user/modals/pieChart';
 import graphModule from './modules/user/modals/graph';
+import categoryModule from './modules/user/modals/category';
+import cashFlowModule from './modules/user/modals/cashFlow';
 
 import dataService from 'common/services/data-service.js';
 import authStorageService from 'common/auth-config/auth-storage-service.js';
@@ -25,7 +27,9 @@ angular.module('app', [
 	uiRouter, 
 	uiBootstrap, 
 	pieChartModule.name,
-	graphModule.name
+	graphModule.name, 
+	categoryModule.name,
+	cashFlowModule.name
 ])
 	.constant('apiConfig', apiConfig)
 	.config(generalRouterConfig)

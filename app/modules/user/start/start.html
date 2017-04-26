@@ -38,8 +38,8 @@
 	    <div layout="row" class="work-form__row" layout-align="center" layout-wrap>
 
 	    	<div layout="row" layout-align="center center">
-	            <md-button class="action" ng-click="ctrl.openModal('', 'tableCashFlow')">
-	        		Денежный поток
+	            <md-button class="action" ng-click="ctrl.openModalPieChart()">
+	        		Диаграмма денежнего потока
 	      		</md-button>
 	    	</div>
 		    <div layout="row" layout-align="center center">
@@ -50,16 +50,7 @@
 	      
 	    </div>
 
-	    <div layout="row" class="work-form__row" layout-align="center" layout-wrap>
-
-	    	<div layout="row" layout-align="center center">
-	            <md-button class="action" ng-click="ctrl.openModalPieChart()">
-	        		Диаграмма денежнего потока
-	      		</md-button>
-	    	</div>	      
-	    </div>
-
-		<!-- <div class="table-responsive">
+		<div class="table-responsive">
 			<table class="table table-striped table-bordered text-left">
 				<thead>
 					<thead>
@@ -70,7 +61,7 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="history in ctrl.currentUser.balanceHistories" ng-class="{tableRow: history.amount < 0}">
-						<td>{{history.date | date:'MM.dd.yyyy'}}</td>	
+						<td>{{history.date | date:'dd.MM.yyyy'}}</td>	
 						<td>{{history.amount}}</td>
 						<td>{{history.description}}</td>
 						<td>{{history.categories.categoryName}}</td>
@@ -78,38 +69,6 @@
 					</tr>
 				</tbody>
 			</table>
-		</div> -->
+		</div>
 	</md-content>
 </div>	
-
-
-<!-- <div  class="picture" style="background-image: url(app/common/images/fon7.jpg)"> -->
-<!-- 
-		<div>
-		<picture ng-click="openModalIncome()">
-		<source srcset="app/common/images/bird.jpg" media="(max-width: 300px) and (orientation: landscape)">
-    <source srcset="app/common/images/fon6.jpg" media="(max-width: 480px) and (orientation: portrait)">
-    <source srcset="app/common/images/fon6.jpg" media="(max-width: 800px) and (orientation: landscape)">
-    <source srcset="app/common/images/fon5.jpg" media="(max-width: 1000зч) and (orientation: portrait)">
-    <img srcset="app/common/images/fon7.jpg" alt="My default image">
-    </picture> -->
-
-<!-- <div  class="picture" style="background-image: url(app/common/images/fon7.jpg); background-size: cover; background-repeat: no-repeat;">
-
-<div class="item meta">
-<h1 class="item-meta-title">
-Добавить <br>доход
-</h1>
-</div> -->
-
-<!-- 	<picture ng-click="ctrl.oapp/common/images/bird.jpgpenModalIncome()">
-    <source srcset="app/common/images/bird.jpg" media="(max-width: 100px)">
-    <img srcset="app/common/images/fon7.jpg" alt="My default image">
-</picture> -->
-<!-- </div>
-<div class="item meta">
-<h1 class="item-meta-title">
-Добавить <br>доход
-</h1>
-</div>
-</div> -->

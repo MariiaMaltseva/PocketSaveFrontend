@@ -16,7 +16,7 @@ export default class GraphModalController{
 	getDataGraph(){
 		let amount = this.user.initialBalance;
 		return this.user.balanceHistories.map((item) => {
-		let graph = {}
+			let graph = {};
 			graph.amount = amount;
 			graph.date = item.date;
 			amount += item.amount;

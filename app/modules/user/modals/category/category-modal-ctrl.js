@@ -18,13 +18,6 @@ export default class CategoryModalController{
 			categoryType: this.typeCategory
 		};
 		this.selectedCategory = '';
-		this.title = this.getTitle();
-	}
-
-	getTitle(){	
-		return (this.typeCategory === 'outcome') 
-				? 'Добавить расход'
-				: 'Добавить доход';	
 	}
 
 	cancel() {
@@ -57,5 +50,4 @@ export default class CategoryModalController{
 			}
 		});
 	}
-
 }
