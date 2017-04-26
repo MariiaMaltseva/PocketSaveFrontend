@@ -1,0 +1,41 @@
+<md-dialog class="modal-pie">
+  <form ng-cloak ng-submit="ctrl.save()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Диаграмма денежнего потока</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+    <div class="md-dialog-pie">  
+
+      <md-input-container class="md-block">
+        <canvas pie="ctrl.pieData" data="ctrl.pieData"></canvas>
+      </md-input-container>
+
+		<md-input-container class="md-block" flex="50">
+        <label>Категории</label>
+        <md-select name="category" ng-model="ctrl.selectedCategory">
+          <md-option value="income">
+            доход
+          </md-option>
+          <md-option value="outcome">
+            расход
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+    </div>
+  </md-dialog-content>
+
+    <md-dialog-actions layout="row">  
+      <md-button ng-click="ctrl.close()">
+        Закрыть
+      </md-button>
+      <md-button ng-click="ctrl.apply()">
+        Применить
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>  

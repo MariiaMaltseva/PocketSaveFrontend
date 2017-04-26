@@ -2,16 +2,19 @@
 <html lang="en" ng-app='app'>
 	<head>
 		<meta charset="UTF-8">
-		<title>HomeWork2</title>
+		<title>PocketSave</title>
 		<link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="/node_modules/vis/dist/vis.css" rel="stylesheet" type="text/css"/>	
 		<base href="/">
+
 		<style>
-		body {
-		    background: #ede9e6 url(app/common/images/fon3.jpg); /* Цвет фона и путь к файлу */
-		 }
-  </style>
+			body {
+			    background: #ede9e6 url(app/common/images/fon3.jpg);
+			 }
+  		</style>
 	</head>
+
 	<body>
 		<ui-view name="header"></ui-view>
 		<ui-view name="headerMain"></ui-view>
@@ -19,7 +22,6 @@
 		Loading . . .
 	</ui-view> -->
 		<ui-view></ui-view>
-
 
 		<script src="public/bundle.js"></script>
 	</body>

@@ -6,6 +6,9 @@ import cashFlowModalController from 'modules/user/modals/cashFlow/cash-flow-ctrl
 import categoryModalTemplate from 'modules/user/modals/category/category-modal.html';
 import categoryModalController from 'modules/user/modals/category/category-modal-ctrl.js';
 
+import tableCashFlowModalTemplate from 'modules/user/modals/table/table-cash-flow.html';
+import tableCashFlowModalController from 'modules/user/modals/table/table-cash-flow-ctrl.js';
+
 export default class DataService{
 	constructor($http, $uibModal, $mdDialog, apiConfig){
 		'ngInject';
@@ -72,4 +75,15 @@ export default class DataService{
     return modalInstance;
    }
 
+   showModal(typeCategory, nameModal){
+    let modalInstance = this.mdDialog.show({
+         template: tableCashFlowModalTemplate,
+         controller: tableCashFlowModalController,
+         controllerAs: 'ctrl',
+          locals: {
+           typeCategory: typeCategory
+         },
+      });
+    return modalInstance;
+   }
 }

@@ -9,14 +9,17 @@ export default class LoginCtrl{
 		this.service = dataService;
 		this.user = {};
 		this.userToLogin = {};
+		this.loginError = false;
 	}
 
 	login(){
 		this.service.login(this.user).then((response)=>{
 			this.userToLogin = response.data;
-			if(this.userToLogin !== null){
+			if(this.userToLogin !== ''){
 				this.authService.setToken(this.userToLogin);
 				this.state.go('start');
+			}else{
+				this.loginError = true;
 			}
 		});
 	}

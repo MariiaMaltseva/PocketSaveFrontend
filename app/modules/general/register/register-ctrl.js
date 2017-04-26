@@ -8,6 +8,7 @@ export default class RegisterCtrl{
 		this.service = dataService;
 		this.authService = authStorageService;
 		this.user = {};
+		this.registerError = false;
 	}
 
 	register(){
@@ -17,6 +18,8 @@ export default class RegisterCtrl{
 				this.authService.setToken(userToRegister);
 				this.authService.setIsNewUserFlag(true);
 				this.$state.go('start');
+			} else {
+				this.registerError = true;
 			}
 		});
 	}

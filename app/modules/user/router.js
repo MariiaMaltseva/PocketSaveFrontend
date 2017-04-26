@@ -19,7 +19,16 @@ export default ($stateProvider, $locationProvider, $urlRouterProvider)=>{
 
 	$stateProvider
 	.state('start', {
-			url: '/start',	  
+			url: '/start',
+			resolve: {
+		  		access: (authStorageService) => {
+		  			'ngInject'
+			  		if(!authStorageService.getToken()){
+			  			event.preventDefault();
+			  			otherwise();
+			  		}
+		  		}
+		  	},	  
 			views:{
 		  		'header': header,
 		  		'': {

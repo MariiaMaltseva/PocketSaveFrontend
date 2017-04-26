@@ -24,6 +24,8 @@
 				<span class="error" ng-show="registerForm.password.$error.validatePass">Password is not valid</span>
 				</md-input-container>
 
+				<div class="credentialsError" ng-if="ctrl.registerError">User with such credentials has already existed</div>
+
 				<div layout="row" layout-align="center center">
 				<md-button class="md-primary" type="submit"> add </md-button>
 				</div>

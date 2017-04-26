@@ -1,6 +1,8 @@
 .md-button.md-primary {
     background-color: #62ff00;
     color: black;
+    font-size: 12px;
+    font-weight: 800;
 }
 
 .modal-new-user > form{
@@ -13,9 +15,46 @@
 	height: 450px;
 }
 
+.modal-cash-flow > form{
+    width: 900px;
+    height: 450px;
+}
+
 md-dialog-content .md-dialog-outcome{
     height: 300px;
     margin-left: 50px;
+}
+
+md-dialog-content .table-responsive{
+    height: 320px;
+    margin-left: 50px;  
+    margin-right: 50px;
+}
+
+.modal-graph > form{
+    width: 700px;
+    height: 770px;
+}
+
+md-dialog-content .md-dialog-graph{
+    height: 600px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.modal-pie > form{
+    width: 700px;
+    height: 550px;
+}
+
+md-dialog-content .md-dialog-pie{
+    height: 400px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+table {
+    margin-top: 50px;
 }
 
 .modal-category > form{
@@ -39,6 +78,26 @@ md-input-container {
     color: #62ff00;
 }
 
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #9de2b0;
+    background-color: rgb(137, 150, 156);
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #62ff00;
+}
+
+md-content.md-default-theme, md-content {
+    color: black;
+    background-color: white;
+}
+
+.navbar-default {
+    background-color: rgb(137, 150, 156);
+    color: #62ff00;
+}
+
 p{
 	font-size: 18px;
 }
@@ -57,24 +116,18 @@ md-input-container .md-input {
     font-weight: 900;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>li>a{
-	color: black;
-    height: 55px;
-}
-
 .navbar-nav>li>a{
     font-size: 18px;
     font-weight: bold;
 }
 
 .container-fluid {
-    background-color: #62ff00;
-
+    background-color: rgb(137, 150, 156);
+    color: #62ff00;
+    width: 1000px;
 }
 
 body {
-    padding-top:100px;
-    background-image: url'app/common/images/money1.png';
     background-color: #ede9e6;
     background-position: center;
     background-size: cover;
@@ -89,9 +142,9 @@ body {
     margin-right: 40px;
     margin-left: 40px;
     width: 400px;
-    height: 200px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -158,4 +211,23 @@ img {
         height: 400px;
         width: 600px;
     }
+}
+
+.main-container {
+    color: black;
+    background-color: #c4d9de;
+}
+
+.error {
+    color: red;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.credentialsError {
+    color: red;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 20px;
 }

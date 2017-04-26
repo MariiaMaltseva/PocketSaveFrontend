@@ -3,13 +3,21 @@
 import modalTemplate from './modal.html';
 
 export default class StartCtrl{
-	constructor(dataService, authStorageService, $state, $mdDialog, $scope){
+	constructor(dataService,
+	 authStorageService, 
+	 $state, 
+	 $mdDialog, 
+	 $scope, 
+	 pieChartService,
+	 graphService){
 		'ngInject';
 
 		this.mdDialog = $mdDialog;
 		this.authService = authStorageService;
 		this.$state = $state;
 		this.service = dataService;
+		this.pieService = pieChartService;
+		this.graphService = graphService;
 		this.currentUser = authStorageService.getToken();
 
 		this.checkIsNewUser();
@@ -37,6 +45,10 @@ export default class StartCtrl{
 		return this.balance.currentBalance - sum;
 	}
 
+	openModal(typeCategory, nameModal) {
+		this.service.showModal(typeCategory, nameModal);
+	}
+
 	openModalCategory(typeCategory) {
 		this.service.showModalCategory(typeCategory);
 	}
@@ -44,6 +56,15 @@ export default class StartCtrl{
 	openCashFlowModal(typeCategory) {
 		this.service.showModalCashFlow(typeCategory);
 	}
+
+	openModalGraph() {
+		this.graphService.showModal();
+	}
+
+	openModalPieChart() {
+		this.pieService.showModal();
+	}
+
 
  	openModalWindow() {
        this.mdDialog.show({
